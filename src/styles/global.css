@@ -1,1 +1,103 @@
 @import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer utilities {
+
+  /* Animaciones de entrada con scroll */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Efecto de brillo en gradientes */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% auto;
+  }
+
+  @keyframes gradient-shift {
+
+    0%,
+    100% {
+      background-position: 0% center;
+    }
+
+    50% {
+      background-position: 100% center;
+    }
+  }
+
+  /* Efecto de partículas/puntos en el fondo */
+  .bg-dots {
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-2 shadow-2xl shadow-blue-500/20;
+  }
+
+  /* Glow effect */
+  .glow {
+    @apply relative;
+  }
+
+  .glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.3), transparent 70%);
+    filter: blur(20px);
+  }
+
+  .glow:hover::before {
+    @apply opacity-100;
+  }
+}

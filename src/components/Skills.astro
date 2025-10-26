@@ -1,34 +1,162 @@
 ---
 const skills = {
-  Frontend: [
-    "React",
-    "JavaScript",
-    "TypeScript",
-    "HTML/CSS",
-    "Tailwind CSS",
-    "Next.js",
-  ],
-  Backend: ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs"],
-  Herramientas: ["Git", "Webpack", "Vite", "Figma", "Jest", "Docker"],
+  Frontend: {
+    items: [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "HTML/CSS",
+      "Tailwind CSS",
+      "Next.js",
+      "Vue.js",
+      "Astro",
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+    </svg>`,
+    color: "blue",
+  },
+  Backend: {
+    items: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "PostgreSQL",
+      "REST APIs",
+      "GraphQL",
+      "Redis",
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+    </svg>`,
+    color: "purple",
+  },
+  Herramientas: {
+    items: [
+      "Git",
+      "GitHub",
+      "Webpack",
+      "Vite",
+      "Figma",
+      "Jest",
+      "Docker",
+      "CI/CD",
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+    </svg>`,
+    color: "pink",
+  },
+};
+
+const colorClasses: any = {
+  blue: "from-blue-500 to-cyan-500",
+  purple: "from-purple-500 to-pink-500",
+  pink: "from-pink-500 to-rose-500",
 };
 ---
 
-<section id="skills" class="py-20 px-4">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl font-bold mb-12 text-center">Habilidades</h2>
-    <div class="grid md:grid-cols-3 gap-8">
+<section id="skills" class="py-32 px-4 relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-20 fade-in">
+      <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider"
+        >Tecnologías</span
+      >
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6">
+        Mis <span class="gradient-text">Habilidades</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Herramientas y tecnologías con las que trabajo para crear experiencias
+        web excepcionales
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
       {
-        Object.entries(skills).map(([category, items]) => (
-          <div class="bg-gray-900 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-xl font-bold mb-4 text-blue-400">{category}</h3>
-            <ul class="space-y-2">
-              {items.map((skill) => (
-                <li class="text-gray-300">• {skill}</li>
-              ))}
-            </ul>
+        Object.entries(skills).map(([category, data], index) => (
+          <div
+            class:list={[
+              "fade-in group relative",
+              {
+                "md:fade-in-left": index === 0,
+                "md:fade-in": index === 1,
+                "md:fade-in-right": index === 2,
+              },
+            ]}
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <div
+              class={`absolute -inset-0.5 bg-gradient-to-r ${colorClasses[data.color]} rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500`}
+            />
+            <div class="relative glass rounded-2xl p-8 h-full hover-lift">
+              <div
+                class={`w-16 h-16 bg-gradient-to-br ${colorClasses[data.color]} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <Fragment set:html={data.icon} />
+              </div>
+              <h3 class="text-2xl font-bold mb-6 text-white">{category}</h3>
+              <div class="space-y-3">
+                {data.items.map((skill) => (
+                  <div class="flex items-center gap-3 group/item">
+                    <div
+                      class={`w-2 h-2 rounded-full bg-gradient-to-r ${colorClasses[data.color]} group-hover/item:scale-150 transition-transform`}
+                    />
+                    <span class="text-gray-300 group-hover/item:text-white group-hover/item:translate-x-1 transition-all">
+                      {skill}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         ))
       }
+    </div>
+
+    <!-- Experiencia adicional -->
+    <div class="fade-in">
+      <div class="glass rounded-2xl p-8 md:p-12">
+        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center">
+          También trabajo con
+        </h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          {
+            [
+              "Responsive Design",
+              "SEO",
+              "Web Performance",
+              "Accessibility",
+              "Testing",
+              "Agile/Scrum",
+              "UI/UX Design",
+              "API Integration",
+            ].map((skill) => (
+              <span class="px-6 py-3 glass hover:bg-white/10 rounded-xl font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/20">
+                {skill}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Learning -->
+    <div class="mt-12 text-center fade-in">
+      <div class="inline-flex items-center gap-3 px-6 py-4 glass rounded-full">
+        <div class="relative">
+          <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+          <div
+            class="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"
+          >
+          </div>
+        </div>
+        <span class="text-gray-300">
+          Actualmente aprendiendo <span class="text-blue-400 font-semibold"
+            >Web3, Three.js y Rust</span
+          >
+        </span>
+      </div>
     </div>
   </div>
 </section>
