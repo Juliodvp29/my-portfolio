@@ -2,12 +2,13 @@
   class="min-h-screen flex items-center justify-center px-4 pt-16 relative overflow-hidden"
 >
   <div
-    class="absolute top-20 left-10 w-72 h-72 bg-slate-700/10 rounded-full blur-3xl animate-pulse"
+    class="absolute top-20 left-10 w-72 h-72 opacity-20 rounded-full blur-3xl animate-pulse"
+    style="background: var(--accent);"
   >
   </div>
   <div
-    class="absolute bottom-20 right-10 w-96 h-96 bg-slate-600/10 rounded-full blur-3xl animate-pulse"
-    style="animation-delay: 1s;"
+    class="absolute bottom-20 right-10 w-96 h-96 opacity-15 rounded-full blur-3xl animate-pulse"
+    style="background: var(--accent); animation-delay: 1s;"
   >
   </div>
 
@@ -15,7 +16,8 @@
     <div class="fade-in">
       <div class="mb-6 inline-block">
         <span
-          class="px-4 py-2 bg-slate-800/50 border border-slate-700/50 rounded-full text-slate-300 text-sm font-medium"
+          class="px-4 py-2 border rounded-full text-sm font-medium"
+          style="background-color: var(--card-bg); border-color: var(--glass-border); color: var(--text-secondary);"
         >
           👋 Bienvenido a mi portafolio
         </span>
@@ -27,12 +29,16 @@
         Hola, soy Julio Otero
       </h1>
 
-      <p class="text-xl md:text-2xl lg:text-3xl text-slate-300 mb-4 font-light">
+      <p
+        class="text-xl md:text-2xl lg:text-3xl mb-4 font-light"
+        style="color: var(--text-secondary);"
+      >
         Frontend Developer
       </p>
 
       <p
-        class="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+        class="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed"
+        style="color: var(--text-muted);"
       >
         Especializado en crear experiencias web modernas, performantes e
         intuitivas que hacen la diferencia
@@ -41,7 +47,8 @@
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a
           href="#projects"
-          class="group px-8 py-4 bg-slate-100 text-slate-900 hover:bg-white rounded-xl font-semibold transition-all duration-300 shadow-lg shadow-slate-900/30 hover:shadow-slate-900/50 hover:-translate-y-1"
+          class="group px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1"
+          style="background: var(--accent); color: white; box-shadow: 0 10px 15px -3px var(--shadow-color);"
         >
           Ver Proyectos
           <span
@@ -53,7 +60,7 @@
         <a
           href="/public/CV_Julio_Otero.pdf"
           download
-          class="group px-8 py-4 glass hover:bg-slate-800/60 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-2"
+          class="group px-8 py-4 glass rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-2 hover-lift"
         >
           <svg
             class="w-5 h-5"
@@ -73,7 +80,8 @@
 
         <a
           href="#contact"
-          class="group px-8 py-4 border-2 border-slate-700 hover:border-slate-500 hover:bg-slate-800/30 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1"
+          class="group px-8 py-4 border-2 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1"
+          style="border-color: var(--glass-border); background-color: transparent;"
         >
           Contactar
         </a>
@@ -84,7 +92,8 @@
       <a
         href="https://github.com/Juliodvp29"
         target="_blank"
-        class="w-12 h-12 flex items-center justify-center glass rounded-full hover:bg-slate-800/60 hover:scale-110 transition-all duration-300"
+        class="w-12 h-12 flex items-center justify-center glass rounded-full hover:scale-110 transition-all duration-300"
+        style="background-color: var(--card-bg);"
       >
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path
@@ -95,7 +104,8 @@
       <a
         href="https://www.linkedin.com/in/julio-enrique-25481122b/"
         target="_blank"
-        class="w-12 h-12 flex items-center justify-center glass rounded-full hover:bg-slate-800/60 hover:scale-110 transition-all duration-300"
+        class="w-12 h-12 flex items-center justify-center glass rounded-full hover:scale-110 transition-all duration-300"
+        style="background-color: var(--card-bg);"
       >
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path
@@ -104,8 +114,9 @@
         </svg>
       </a>
       <a
-        href="mailto:tu@email.com"
-        class="w-12 h-12 flex items-center justify-center glass rounded-full hover:bg-slate-800/60 hover:scale-110 transition-all duration-300"
+        href="mailto:julionew19@email.com"
+        class="w-12 h-12 flex items-center justify-center glass rounded-full hover:scale-110 transition-all duration-300"
+        style="background-color: var(--card-bg);"
       >
         <svg
           class="w-6 h-6"
@@ -126,7 +137,8 @@
     <div class="mt-20 fade-in animate-bounce">
       <a
         href="#about"
-        class="inline-block text-slate-400 hover:text-slate-100 transition-colors"
+        class="inline-block transition-colors"
+        style="color: var(--text-muted);"
       >
         <svg
           class="w-6 h-6 mx-auto"

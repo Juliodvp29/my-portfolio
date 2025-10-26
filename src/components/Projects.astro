@@ -60,20 +60,24 @@ const projects = [
 
 <section id="projects" class="py-32 px-4 relative">
   <div
-    class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/5 to-transparent"
+    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent"
+    style="background: linear-gradient(to bottom, transparent, rgba(var(--accent), 0.05), transparent);"
   >
   </div>
 
   <div class="max-w-7xl mx-auto relative">
     <div class="text-center mb-20 fade-in">
       <span
-        class="text-slate-400 font-semibold text-sm uppercase tracking-wider"
-        >Mi trabajo</span
+        class="font-semibold text-sm uppercase tracking-wider"
+        style="color: var(--text-muted);">Mi trabajo</span
       >
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6">
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6"
+        style="color: var(--text-primary);"
+      >
         Proyectos <span class="gradient-text">Destacados</span>
       </h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">
         Una selección de proyectos que demuestran mis habilidades y experiencia
         en desarrollo web
       </p>
@@ -90,7 +94,10 @@ const projects = [
                 { "fade-in-left": index === 0, "fade-in-right": index === 1 },
               ]}
             >
-              <div class="absolute -inset-1 bg-slate-700/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
+              <div
+                class="absolute -inset-1 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"
+                style="background-color: var(--shadow-color);"
+              />
               <div class="relative glass rounded-2xl overflow-hidden hover-lift">
                 <div class="relative overflow-hidden">
                   <img
@@ -98,23 +105,35 @@ const projects = [
                     alt={project.title}
                     class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent opacity-80" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent opacity-60" />
                   <div class="absolute top-4 right-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-900 text-xs font-bold rounded-full">
+                    <span
+                      class="px-3 py-1 text-xs font-bold rounded-full"
+                      style="background: var(--accent); color: white;"
+                    >
                       Destacado
                     </span>
                   </div>
                 </div>
                 <div class="p-8">
-                  <h3 class="text-2xl font-bold mb-3 group-hover:text-slate-100 transition-colors">
+                  <h3
+                    class="text-2xl font-bold mb-3 transition-colors"
+                    style="color: var(--text-primary);"
+                  >
                     {project.title}
                   </h3>
-                  <p class="text-slate-400 mb-6 leading-relaxed">
+                  <p
+                    class="mb-6 leading-relaxed"
+                    style="color: var(--text-secondary);"
+                  >
                     {project.description}
                   </p>
                   <div class="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech) => (
-                      <span class="px-4 py-2 glass text-slate-300 rounded-lg text-sm font-medium hover:bg-slate-800/60 transition-colors">
+                      <span
+                        class="px-4 py-2 glass rounded-lg text-sm font-medium hover-lift"
+                        style="background-color: var(--card-bg); color: var(--text-secondary);"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -122,7 +141,8 @@ const projects = [
                   <div class="flex gap-4">
                     <a
                       href={project.demo}
-                      class="group/link flex items-center gap-2 text-slate-200 hover:text-white font-semibold transition-colors"
+                      class="group/link flex items-center gap-2 font-semibold transition-colors hover:opacity-80"
+                      style="color: var(--text-primary);"
                     >
                       <svg
                         class="w-5 h-5"
@@ -144,7 +164,8 @@ const projects = [
                     </a>
                     <a
                       href={project.github}
-                      class="group/link flex items-center gap-2 text-slate-400 hover:text-slate-200 font-semibold transition-colors"
+                      class="group/link flex items-center gap-2 font-semibold transition-colors hover:opacity-80"
+                      style="color: var(--text-muted);"
                     >
                       <svg
                         class="w-5 h-5"
@@ -172,7 +193,10 @@ const projects = [
           .filter((p) => !p.featured)
           .map((project) => (
             <div class="fade-in group relative">
-              <div class="absolute -inset-0.5 bg-slate-700/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
+              <div
+                class="absolute -inset-0.5 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"
+                style="background-color: var(--shadow-color);"
+              />
               <div class="relative glass rounded-xl overflow-hidden hover-lift h-full flex flex-col">
                 <div class="relative overflow-hidden">
                   <img
@@ -183,15 +207,24 @@ const projects = [
                   <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-transparent" />
                 </div>
                 <div class="p-6 flex-1 flex flex-col">
-                  <h3 class="text-xl font-bold mb-2 group-hover:text-slate-100 transition-colors">
+                  <h3
+                    class="text-xl font-bold mb-2 transition-colors"
+                    style="color: var(--text-primary);"
+                  >
                     {project.title}
                   </h3>
-                  <p class="text-slate-400 mb-4 flex-1 text-sm leading-relaxed">
+                  <p
+                    class="mb-4 flex-1 text-sm leading-relaxed"
+                    style="color: var(--text-secondary);"
+                  >
                     {project.description}
                   </p>
                   <div class="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
-                      <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs font-medium">
+                      <span
+                        class="px-3 py-1 rounded-full text-xs font-medium"
+                        style="background-color: var(--card-bg); color: var(--text-secondary);"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -199,7 +232,8 @@ const projects = [
                   <div class="flex gap-4 text-sm">
                     <a
                       href={project.demo}
-                      class="text-slate-300 hover:text-white transition-colors flex items-center gap-1"
+                      class="transition-colors flex items-center gap-1 hover:opacity-80"
+                      style="color: var(--text-primary);"
                     >
                       Demo
                       <span class="inline-block transition-transform group-hover:translate-x-0.5">
@@ -208,7 +242,8 @@ const projects = [
                     </a>
                     <a
                       href={project.github}
-                      class="text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1"
+                      class="transition-colors flex items-center gap-1 hover:opacity-80"
+                      style="color: var(--text-muted);"
                     >
                       GitHub
                       <span class="inline-block transition-transform group-hover:translate-x-0.5">
@@ -224,11 +259,13 @@ const projects = [
     </div>
 
     <div class="mt-16 text-center fade-in">
-      <p class="text-slate-400 mb-6">¿Quieres ver más proyectos?</p>
+      <p class="mb-6" style="color: var(--text-muted);">
+        ¿Quieres ver más proyectos?
+      </p>
       <a
         href="https://github.com/Juliodvp29"
         target="_blank"
-        class="inline-flex items-center gap-2 px-8 py-4 glass hover:bg-slate-800/60 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1"
+        class="inline-flex items-center gap-2 px-8 py-4 glass rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover-lift"
       >
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path
