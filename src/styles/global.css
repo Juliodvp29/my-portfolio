@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Syne:wght@400..800&display=swap');
+
 
 
 @layer base {
@@ -39,6 +39,11 @@
     --radius-lg: 12px;
 
     --grid-dot: rgba(255, 255, 255, 0.025);
+
+    --terminal-bg: rgba(9, 10, 16, 0.95);
+    --terminal-header-bg: rgba(255, 255, 255, 0.03);
+    --terminal-code-yellow: #ffd700;
+    --terminal-code-green: #28c840;
   }
 
   [data-theme="light"] {
@@ -69,6 +74,11 @@
     --shadow-accent: rgba(0, 122, 66, 0.1);
 
     --grid-dot: rgba(0, 0, 0, 0.04);
+
+    --terminal-bg: #f8fafc;
+    --terminal-header-bg: #f1f5f9;
+    --terminal-code-yellow: #b45309;
+    --terminal-code-green: #15803d;
   }
 
   html {

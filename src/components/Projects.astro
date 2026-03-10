@@ -66,7 +66,7 @@
             </div>
             <div class="tl" style="--d:.8s;padding-left:14px;">
               <span style="color:var(--blue);">return</span> db.rpc(<span
-                style="color:#ffd700;">'set_tenant'</span
+                style="color:var(--terminal-code-yellow);">'set_tenant'</span
               >, &#123; host &#125;);
             </div>
             <div class="tl" style="--d:1s;">&#125;;</div>
@@ -76,7 +76,7 @@
             </div>
             <div class="tl" style="--d:1.4s;">
               <span style="color:var(--blue);">const</span> prompt = <span
-                style="color:#ffd700;"
+                style="color:var(--terminal-code-yellow);"
                 >`Eres un experto en ventas de $&#123;tenant&#125;. Usa RAG para
                 responder sobre stock real.`</span
               >;
@@ -88,7 +88,7 @@
             <span style="color:var(--text-primary);">*</span>
             <span style="color:var(--blue);">FROM</span>
             <span style="color:var(--accent);">orders</span>;
-            <div class="tl" style="--d:1.8s;color:#28c840;">
+            <div class="tl" style="--d:1.8s;color:var(--terminal-code-green);">
               // [Output] Row Level Security: ACTIVE
             </div>
 
@@ -550,11 +550,11 @@
   .feat-terminal {
     width: 90%;
     max-width: 480px;
-    background: rgba(7, 8, 13, 0.9);
+    background: var(--terminal-bg);
     border: 1px solid var(--border-accent);
     border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 50px var(--shadow);
     transition: transform 0.5s ease;
   }
 
@@ -568,7 +568,7 @@
     gap: 6px;
     padding: 10px 14px;
     border-bottom: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--terminal-header-bg);
   }
 
   .terminal-dot {

@@ -191,22 +191,31 @@
       <div class="chip-grid">
         {
           [
-            { icon: "🅰️", label: "Angular" },
-            { icon: "🟦", label: "TypeScript" },
-            { icon: "🟩", label: "Node.js", blue: true },
-            { icon: "🐘", label: "PostgreSQL", blue: true },
-            { icon: "🎨", label: "Tailwind" },
-            { icon: "⚡", label: "Supabase", blue: true },
-            { icon: "📱", label: "Ionic" },
-            { icon: "🦀", label: "Rust*", blue: true },
-            { icon: "🐋", label: "Docker", blue: true },
-            { icon: "☁️", label: "AWS" },
-            { icon: "🐍", label: "Python" },
-            { icon: "🤖", label: "Gemini AI", blue: true },
-            { icon: "🎨", label: "UI/UX Design" },
+            { slug: "angular", label: "Angular" },
+            { slug: "typescript", label: "TypeScript" },
+            { slug: "nodedotjs", label: "Node.js", blue: true },
+            { slug: "postgresql", label: "PostgreSQL", blue: true },
+            { slug: "tailwindcss", label: "Tailwind" },
+            { slug: "supabase", label: "Supabase", blue: true },
+            { slug: "ionic", label: "Ionic" },
+            { slug: "rust", label: "Rust*", blue: true },
+            { slug: "docker", label: "Docker", blue: true },
+            { slug: "aws", label: "AWS" },
+            { slug: "python", label: "Python" },
+            { slug: "googlegemini", label: "Gemini AI", blue: true },
+            { slug: "figma", label: "UI/UX Design" },
           ].map((chip) => (
             <div class={`chip ${chip.blue ? "chip--blue" : ""}`}>
-              <span class="chip-icon">{chip.icon}</span>
+              <img
+                src={
+                  chip.slug === "aws"
+                    ? "https://skillicons.dev/icons?i=aws"
+                    : `https://cdn.simpleicons.org/${chip.slug}`
+                }
+                alt={chip.label}
+                class="chip-icon"
+                loading="lazy"
+              />
               <span class="chip-label">{chip.label}</span>
             </div>
           ))
@@ -465,8 +474,9 @@
     box-shadow: 0 4px 16px rgba(77, 159, 255, 0.1);
   }
   .chip-icon {
-    font-size: 20px;
-    line-height: 1;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
   }
   .chip-label {
     font-family: var(--font-mono);
