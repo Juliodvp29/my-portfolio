@@ -1,279 +1,903 @@
----
-const projects = [
-  {
-    title: "Gestor de habitos con IA",
-    description:
-      "Plataforma movil cuyo propósito es ayudar a los usuarios a crear y mantener hábitos positivos mediante seguimiento inteligente, análisis de comportamiento y motivación personalizada basada en inteligencia artificial.",
-    tech: ["Ionic/Angular", "NestJS", "PostgreSQL.", "Firebase"],
-    image:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=400&fit=crop",
-    demo: "#",
-    github: "#",
-    featured: true,
-  },
-  {
-    title: "Task Management App",
-    description:
-      "Aplicación de gestión de tareas con drag & drop, filtros avanzados y sincronización en tiempo real. y usuarios.",
-    tech: ["Angular", "Tailwind"],
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=400&fit=crop",
-    demo: "#",
-    github: "#",
-    featured: false,
-  },
-  {
-    title: "Social Media App",
-    description:
-      "Red social con feed en tiempo real, likes, comentarios y sistema de mensajería.",
-    tech: ["React", "Socket.io", "Express", "PostgreSQL"],
-    image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop",
-    demo: "#",
-    github: "#",
-    featured: false,
-  },
-  {
-    title: "Weather Dashboard",
-    description:
-      "Dashboard del clima con pronóstico de 7 días, mapas interactivos y alertas personalizadas.",
-    tech: ["Vue.js", "OpenWeather API", "Leaflet", "Vuex"],
-    image:
-      "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=400&fit=crop",
-    demo: "#",
-    github: "#",
-    featured: false,
-  },
-  {
-    title: "Fitness Tracker",
-    description:
-      "Aplicación de seguimiento de ejercicios con planes personalizados y análisis de progreso.",
-    tech: ["React Native", "Redux", "Node.js", "MongoDB"],
-    image:
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=400&fit=crop",
-    demo: "#",
-    github: "#",
-    featured: false,
-  },
-];
----
-
-<section id="projects" class="py-32 px-4 relative">
+<section id="projects" class="relative py-32 px-6 lg:px-8 overflow-hidden">
   <div
-    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent"
-    style="background: linear-gradient(to bottom, transparent, rgba(var(--accent), 0.05), transparent);"
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] pointer-events-none"
+    style="background:linear-gradient(90deg,transparent,var(--border-accent),transparent);"
   >
   </div>
 
-  <div class="max-w-7xl mx-auto relative">
-    <div class="text-center mb-20 fade-in">
-      <span
-        class="font-semibold text-sm uppercase tracking-wider"
-        style="color: var(--text-muted);">Mi trabajo</span
-      >
+  <div class="max-w-6xl mx-auto">
+    <div class="fade-in mb-14">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="section-label">
+          <span data-lang="es">// 03 — proyectos</span>
+          <span data-lang="en">// 03 — projects</span>
+        </span>
+        <div
+          style="flex:1;height:1px;background:linear-gradient(90deg,var(--border-accent),transparent);"
+        >
+        </div>
+      </div>
       <h2
-        class="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6"
-        style="color: var(--text-primary);"
+        class="font-display font-bold"
+        style="font-size:clamp(2rem,5vw,3.5rem);color:var(--text-primary);line-height:1.1;margin-bottom:10px;"
       >
-        Proyectos <span class="gradient-text">Destacados</span>
+        <span data-lang="es"
+          ><span class="gradient-text">Proyectos</span> que hablan</span
+        >
+        <span data-lang="en"
+          ><span class="gradient-text">Projects</span> that speak</span
+        >
       </h2>
-      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">
-        Una selección de proyectos que demuestran mis habilidades y experiencia
-        en desarrollo web
+      <p class="font-mono text-xs" style="color:var(--text-muted);">
+        <span data-lang="es"
+          >// cosas que construí porque quería resolver problemas reales o
+          aprender algo difícil</span
+        >
+        <span data-lang="en"
+          >// things I built because I wanted to solve real problems or learn
+          something hard</span
+        >
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8 mb-8">
-      {
-        projects
-          .filter((p) => p.featured)
-          .map((project, index) => (
-            <div
-              class:list={[
-                "fade-in group relative",
-                { "fade-in-left": index === 0, "fade-in-right": index === 1 },
-              ]}
+    <div class="featured-card fade-in mb-14">
+      <div class="featured-visual">
+        <div class="feat-terminal">
+          <div class="feat-terminal-header">
+            <div class="terminal-dot terminal-dot-red"></div>
+            <div class="terminal-dot terminal-dot-yellow"></div>
+            <div class="terminal-dot terminal-dot-green"></div>
+            <span class="font-mono text-[10px] ml-2 opacity-50"
+              >venti_core / engine.ts</span
             >
-              <div
-                class="absolute -inset-1 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"
-                style="background-color: var(--shadow-color);"
-              />
-              <div class="relative glass rounded-2xl overflow-hidden hover-lift">
-                <div class="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent opacity-60" />
-                  <div class="absolute top-4 right-4">
-                    <span
-                      class="px-3 py-1 text-xs font-bold rounded-full"
-                      style="background: var(--accent); color: white;"
-                    >
-                      Destacado
-                    </span>
-                  </div>
-                </div>
-                <div class="p-8">
-                  <h3
-                    class="text-2xl font-bold mb-3 transition-colors"
-                    style="color: var(--text-primary);"
-                  >
-                    {project.title}
-                  </h3>
-                  <p
-                    class="mb-6 leading-relaxed"
-                    style="color: var(--text-secondary);"
-                  >
-                    {project.description}
-                  </p>
-                  <div class="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech) => (
-                      <span
-                        class="px-4 py-2 glass rounded-lg text-sm font-medium hover-lift"
-                        style="background-color: var(--card-bg); color: var(--text-secondary);"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div class="flex gap-4">
-                    <a
-                      href={project.demo}
-                      class="group/link flex items-center gap-2 font-semibold transition-colors hover:opacity-80"
-                      style="color: var(--text-primary);"
-                    >
-                      <svg
-                        class="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                      Ver Demo
-                      <span class="inline-block transition-transform group-hover/link:translate-x-1">
-                        →
-                      </span>
-                    </a>
-                    <a
-                      href={project.github}
-                      class="group/link flex items-center gap-2 font-semibold transition-colors hover:opacity-80"
-                      style="color: var(--text-muted);"
-                    >
-                      <svg
-                        class="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                      </svg>
-                      GitHub
-                      <span class="inline-block transition-transform group-hover/link:translate-x-1">
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="font-mono p-5 leading-relaxed" style="font-size:11px;">
+            <div class="tl" style="--d:.2s;color:var(--text-muted);">
+              // 🛡️ Multi-tenant Security Layer
             </div>
-          ))
-      }
+            <div class="tl" style="--d:.4s;">
+              <span style="color:var(--blue);">const</span>
+              <span style="color:var(--accent);">tenantGuard</span> = (req) => &#123;
+            </div>
+            <div class="tl" style="--d:.6s;padding-left:14px;">
+              <span style="color:var(--blue);">const</span> host = req.headers.<span
+                style="color:var(--accent);">host</span
+              >;
+            </div>
+            <div class="tl" style="--d:.8s;padding-left:14px;">
+              <span style="color:var(--blue);">return</span> db.rpc(<span
+                style="color:#ffd700;">'set_tenant'</span
+              >, &#123; host &#125;);
+            </div>
+            <div class="tl" style="--d:1s;">&#125;;</div>
+
+            <div class="tl mt-4" style="--d:1.2s;color:var(--text-muted);">
+              // 🤖 IA Assistant Context
+            </div>
+            <div class="tl" style="--d:1.4s;">
+              <span style="color:var(--blue);">const</span> prompt = <span
+                style="color:#ffd700;"
+                >`Eres un experto en ventas de $&#123;tenant&#125;. Usa RAG para
+                responder sobre stock real.`</span
+              >;
+            </div>
+
+            <div class="tl mt-4" style="--d:1.6s;color:var(--blue);">
+              SELECT
+            </div>
+            <span style="color:var(--text-primary);">*</span>
+            <span style="color:var(--blue);">FROM</span>
+            <span style="color:var(--accent);">orders</span>;
+            <div class="tl" style="--d:1.8s;color:#28c840;">
+              // [Output] Row Level Security: ACTIVE
+            </div>
+
+            <div class="tl" style="--d:2s;margin-top:8px;">
+              <span style="color:var(--accent);">$</span>
+              <span class="cursor">_</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-info">
+        <div class="feat-badge">
+          <div class="feat-dot"></div>
+          <span data-lang="es">PROYECTO DESTACADO</span>
+          <span data-lang="en">FEATURED PROJECT</span>
+        </div>
+        <h3
+          class="font-display font-extrabold mb-3"
+          style="font-size:1.8rem;color:var(--text-primary);"
+        >
+          Venti Shop
+        </h3>
+        <p
+          class="mb-4 leading-relaxed"
+          style="font-size:14px;color:var(--text-secondary);"
+        >
+          <span data-lang="es"
+            >Plataforma SaaS de eCommerce multi-tenant con aislamiento estricto
+            por Row Level Security. Cada tenant tiene su propio subdominio,
+            tienda y panel de control — sin compartir datos.</span
+          >
+          <span data-lang="en"
+            >Multi-tenant SaaS eCommerce platform with strict Row Level Security
+            isolation. Each tenant gets its own subdomain, storefront and
+            dashboard — zero data leakage.</span
+          >
+        </p>
+        <ul class="feat-highlights mb-5">
+          <li class="feat-hl">
+            <span data-lang="es"
+              >Shared-schema con PostgreSQL RLS — +30 tablas normalizadas</span
+            ><span data-lang="en"
+              >Shared-schema with PostgreSQL RLS — +30 normalized tables</span
+            >
+          </li>
+          <li class="feat-hl">
+            <span data-lang="es"
+              >RBAC con 5 roles: Owner, Admin, Editor, Viewer, Delivery</span
+            ><span data-lang="en"
+              >RBAC with 5 roles: Owner, Admin, Editor, Viewer, Delivery</span
+            >
+          </li>
+          <li class="feat-hl">
+            <span data-lang="es"
+              >Asistente IA con Google Gemini + function calling</span
+            ><span data-lang="en"
+              >AI Assistant with Google Gemini + function calling</span
+            >
+          </li>
+          <li class="feat-hl">
+            <span data-lang="es">Routing de storefront por subdominio</span
+            ><span data-lang="en">Subdomain-based storefront routing</span>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-1.5 mb-6">
+          <span class="badge">Angular 21</span>
+          <span class="badge">TypeScript</span>
+          <span class="badge">Supabase</span>
+          <span class="badge">PostgreSQL</span>
+          <span class="badge">TailwindCSS</span>
+          <span class="badge badge-blue">Gemini AI</span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="https://github.com/Juliodvp29"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            <span class="btn-bk">[</span>
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              ></path></svg
+            >
+            GitHub <span class="btn-bk">]</span>
+          </a>
+          <a
+            href="https://venti-multi-tenant.vercel.app/"
+            target="_blank"
+            class="btn btn-blue"
+          >
+            <span class="btn-bk">[</span>
+            <svg
+              class="w-3.5 h-3.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              ></path>
+            </svg>
+            <span data-lang="es">Probar Demo</span><span data-lang="en"
+              >Try Demo</span
+            >
+            <span class="btn-bk">]</span>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {
-        projects
-          .filter((p) => !p.featured)
-          .map((project) => (
-            <div class="fade-in group relative">
-              <div
-                class="absolute -inset-0.5 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"
-                style="background-color: var(--shadow-color);"
-              />
-              <div class="relative glass rounded-xl overflow-hidden hover-lift h-full flex flex-col">
-                <div class="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-transparent" />
-                </div>
-                <div class="p-6 flex-1 flex flex-col">
-                  <h3
-                    class="text-xl font-bold mb-2 transition-colors"
-                    style="color: var(--text-primary);"
-                  >
-                    {project.title}
-                  </h3>
-                  <p
-                    class="mb-4 flex-1 text-sm leading-relaxed"
-                    style="color: var(--text-secondary);"
-                  >
-                    {project.description}
-                  </p>
-                  <div class="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <span
-                        class="px-3 py-1 rounded-full text-xs font-medium"
-                        style="background-color: var(--card-bg); color: var(--text-secondary);"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div class="flex gap-4 text-sm">
-                    <a
-                      href={project.demo}
-                      class="transition-colors flex items-center gap-1 hover:opacity-80"
-                      style="color: var(--text-primary);"
-                    >
-                      Demo
-                      <span class="inline-block transition-transform group-hover:translate-x-0.5">
-                        →
-                      </span>
-                    </a>
-                    <a
-                      href={project.github}
-                      class="transition-colors flex items-center gap-1 hover:opacity-80"
-                      style="color: var(--text-muted);"
-                    >
-                      GitHub
-                      <span class="inline-block transition-transform group-hover:translate-x-0.5">
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))
-      }
+    <div class="projects-grid">
+      <div class="proj-card fade-in">
+        <div class="proj-top-bar"></div>
+        <div class="proj-body">
+          <div class="proj-icon">🍽️</div>
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="proj-name">Restaurant ERP</h4>
+            <span class="status-chip status-chip--soon"
+              ><span class="sc-dot"></span><span data-lang="es">Próximo</span
+              ><span data-lang="en">Soon</span></span
+            >
+          </div>
+          <p class="proj-desc">
+            <span data-lang="es"
+              >Sistema ERP/POS completo para restaurantes. Pedidos en tiempo
+              real, control de inventario basado en recetas, panel KDS y
+              analíticas de ventas.</span
+            >
+            <span data-lang="en"
+              >Complete ERP/POS system for restaurants. Real-time orders,
+              recipe-based inventory control, KDS kitchen panel and sales
+              analytics.</span
+            >
+          </p>
+          <div class="proj-hl">
+            <span data-lang="es"
+              >Sync salón ↔ cocina en tiempo real con Supabase Realtime</span
+            ><span data-lang="en"
+              >Real-time dining ↔ kitchen sync with Supabase Realtime</span
+            >
+          </div>
+          <div class="proj-hl">
+            <span data-lang="es"
+              >Inventario automático al preparar — basado en recetas</span
+            ><span data-lang="en"
+              >Auto inventory on preparation — recipe-based</span
+            >
+          </div>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="badge">Angular 21</span><span class="badge"
+              >Tailwind 4</span
+            ><span class="badge">Supabase</span><span class="badge"
+              >ApexCharts</span
+            ><span class="badge">Vitest</span>
+          </div>
+          <div class="proj-footer">
+            <a
+              href="https://github.com/Juliodvp29/srest-system"
+              target="_blank"
+              class="btn btn-sm"
+              ><span class="btn-bk">[</span> GitHub <span class="btn-bk">]</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-in delay-100">
+        <div class="proj-top-bar"></div>
+        <div class="proj-body">
+          <div class="proj-icon">📖</div>
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="proj-name">Lingo</h4>
+            <span class="status-chip status-chip--dl"
+              ><span class="sc-dot"></span>APK</span
+            >
+          </div>
+          <p class="proj-desc">
+            <span data-lang="es"
+              >App móvil para aprender inglés mediante lectura inmersiva con
+              audio sincronizado. Implementa el algoritmo SM-2 — la app sabe
+              exactamente cuándo vas a olvidar una palabra.</span
+            >
+            <span data-lang="en"
+              >Mobile app to learn English through immersive reading with synced
+              audio. Implements the SM-2 algorithm — the app knows exactly when
+              you're about to forget a word.</span
+            >
+          </p>
+          <div class="proj-hl">
+            <span data-lang="es"
+              >Algoritmo SM-2 implementado a mano (estándar de Anki/Duolingo)</span
+            ><span data-lang="en"
+              >Manually implemented SM-2 algorithm (Anki/Duolingo standard)</span
+            >
+          </div>
+          <div class="proj-hl">
+            <span data-lang="es">TTS nativo con Capacitor — Android / iOS</span
+            ><span data-lang="en"
+              >Native TTS with Capacitor — Android / iOS</span
+            >
+          </div>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="badge">Angular 21</span><span class="badge"
+              >Ionic 8</span
+            ><span class="badge">Capacitor</span><span class="badge"
+              >Supabase</span
+            ><span class="badge">SM-2</span>
+          </div>
+          <div class="proj-footer">
+            <a
+              href="https://github.com/Juliodvp29/lingo"
+              target="_blank"
+              class="btn btn-sm"
+              ><span class="btn-bk">[</span> GitHub <span class="btn-bk">]</span
+              ></a
+            >
+            <a
+              href="https://github.com/Juliodvp29/lingo/releases/download/v0.0.1/Lingo-v0.0.1.apk"
+              class="btn btn-sm btn-blue"
+              ><span class="btn-bk" style="color:var(--blue);">[</span> APK <span
+                class="btn-bk"
+                style="color:var(--blue);">]</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card proj-card--rust fade-in delay-200">
+        <div class="proj-top-bar proj-top-bar--rust"></div>
+        <div class="proj-body">
+          <div class="proj-icon">🔍</div>
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="proj-name">
+              <span data-lang="es">Motor de Búsqueda</span><span data-lang="en"
+                >Search Engine</span
+              >
+            </h4>
+            <span class="status-chip status-chip--soon"
+              ><span class="sc-dot"></span><span data-lang="es">Próximo</span
+              ><span data-lang="en">Soon</span></span
+            >
+          </div>
+          <p class="proj-desc">
+            <span data-lang="es"
+              >Motor de búsqueda full-stack desde cero. Crawler concurrente en
+              Rust (Tokio), índice invertido y algoritmo BM25 para ranking — el
+              mismo estándar de Elasticsearch.</span
+            >
+            <span data-lang="en"
+              >Full-stack search engine from scratch. Concurrent Rust crawler
+              (Tokio), inverted index and BM25 ranking — the same standard used
+              by Elasticsearch.</span
+            >
+          </p>
+          <div class="proj-hl proj-hl--blue">
+            <span data-lang="es"
+              >BM25 implementado manualmente — el algoritmo detrás de
+              Elasticsearch</span
+            ><span data-lang="en"
+              >Manually implemented BM25 — the algorithm behind Elasticsearch</span
+            >
+          </div>
+          <div class="proj-hl proj-hl--blue">
+            <span data-lang="es"
+              >Crawler concurrente con Tokio — múltiples sitios sin bloqueos</span
+            ><span data-lang="en"
+              >Concurrent Tokio crawler — multiple sites without blocking</span
+            >
+          </div>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="badge badge-blue">Rust</span><span
+              class="badge badge-blue">Tokio</span
+            ><span class="badge">Node.js</span><span class="badge"
+              >Angular 21</span
+            ><span class="badge">Docker</span>
+          </div>
+          <div class="proj-footer">
+            <a
+              href="https://github.com/Juliodvp29/search-engine"
+              target="_blank"
+              class="btn btn-sm btn-blue"
+              ><span class="btn-bk" style="color:var(--blue);">[</span> GitHub <span
+                class="btn-bk"
+                style="color:var(--blue);">]</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-in delay-300">
+        <div class="proj-top-bar"></div>
+        <div class="proj-body">
+          <div class="proj-icon">🎵</div>
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="proj-name">MusicPlayer Pro</h4>
+            <span class="status-chip status-chip--live"
+              ><span class="sc-dot"></span>.exe</span
+            >
+          </div>
+          <p class="proj-desc">
+            <span data-lang="es"
+              >Reproductor de audio para Windows con interfaz dark minimalista.
+              Componentes gráficos 100% custom sobre Tkinter Canvas, motor
+              Pygame y gestión de metadatos en tiempo real.</span
+            >
+            <span data-lang="en"
+              >Windows audio player with a minimal dark interface. 100% custom
+              graphic components on Tkinter Canvas, Pygame engine and real-time
+              metadata management.</span
+            >
+          </p>
+          <div class="proj-hl">
+            <span data-lang="es"
+              >UI completamente custom sobre Tkinter Canvas — sin widgets por
+              defecto</span
+            ><span data-lang="en"
+              >Fully custom UI on Tkinter Canvas — zero default widgets</span
+            >
+          </div>
+          <div class="proj-hl">
+            <span data-lang="es"
+              >Distribuido como .exe standalone con PyInstaller</span
+            ><span data-lang="en"
+              >Distributed as standalone .exe with PyInstaller</span
+            >
+          </div>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="badge">Python 3</span><span class="badge">Tkinter</span
+            ><span class="badge">Pygame</span><span class="badge">Mutagen</span
+            ><span class="badge">PyInstaller</span>
+          </div>
+          <div class="proj-footer">
+            <a
+              href="https://github.com/Juliodvp29/MusicPlayer"
+              target="_blank"
+              class="btn btn-sm"
+              ><span class="btn-bk">[</span> GitHub <span class="btn-bk">]</span
+              ></a
+            >
+            <a
+              href="https://github.com/Juliodvp29/MusicPlayer/releases/download/v1.0.0/MusicPlayerPro.exe"
+              class="btn btn-sm btn-primary"
+              ><span class="btn-bk">[</span> .exe <span class="btn-bk">]</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="mt-16 text-center fade-in">
-      <p class="mb-6" style="color: var(--text-muted);">
-        ¿Quieres ver más proyectos?
+    <div class="text-center fade-in mt-4">
+      <p class="font-mono text-xs mb-4" style="color:var(--text-muted);">
+        <span data-lang="es">// más proyectos en construcción</span>
+        <span data-lang="en">// more projects in progress</span>
       </p>
       <a
         href="https://github.com/Juliodvp29"
         target="_blank"
-        class="inline-flex items-center gap-2 px-8 py-4 glass rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover-lift"
+        class="btn btn-primary"
       >
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path
+        <span class="btn-bk">[</span>
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"
+          ><path
             d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-          ></path>
-        </svg>
-        Ver todos en GitHub
+          ></path></svg
+        >
+        <span data-lang="es">Ver GitHub</span><span data-lang="en"
+          >View GitHub</span
+        >
+        <span class="btn-bk">]</span>
       </a>
     </div>
   </div>
 </section>
+
+<style>
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .gradient-text {
+    background: linear-gradient(
+      135deg,
+      var(--text-primary) 0%,
+      var(--accent) 50%,
+      var(--blue) 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gs 5s ease infinite;
+    display: inline-block;
+  }
+  @keyframes gs {
+    0%,
+    100% {
+      background-position: 0%;
+    }
+    50% {
+      background-position: 100%;
+    }
+  }
+
+  .featured-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0, 232, 122, 0.06);
+    transition:
+      border-color 0.3s,
+      box-shadow 0.3s;
+  }
+  .featured-card:hover {
+    border-color: rgba(0, 232, 122, 0.45);
+    box-shadow: 0 0 60px rgba(0, 232, 122, 0.1);
+  }
+  @media (max-width: 800px) {
+    .featured-card {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .featured-visual {
+    position: relative;
+    background: var(--bg-panel);
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .featured-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 232, 122, 0.03),
+      rgba(77, 159, 255, 0.03)
+    );
+  }
+
+  .feat-terminal {
+    width: 90%;
+    max-width: 480px;
+    background: rgba(7, 8, 13, 0.9);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+  }
+
+  .feat-terminal:hover {
+    transform: translateY(-5px) scale(1.02);
+  }
+
+  .feat-terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .terminal-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .terminal-dot-red {
+    background: #ff5f57;
+  }
+  .terminal-dot-yellow {
+    background: #febc2e;
+  }
+  .terminal-dot-green {
+    background: #28c840;
+  }
+
+  .tl {
+    opacity: 0;
+    animation: fl 0.25s ease forwards;
+    animation-delay: var(--d, 0s);
+  }
+  @keyframes fl {
+    from {
+      opacity: 0;
+      transform: translateX(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .cursor {
+    animation: blink 1s step-end infinite;
+    color: var(--text-muted);
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .featured-info {
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .feat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    margin-bottom: 18px;
+    background: var(--accent-dim);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    align-self: flex-start;
+  }
+  .feat-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+    animation: pd 2s ease infinite;
+  }
+  @keyframes pd {
+    0%,
+    100% {
+      box-shadow: 0 0 6px var(--accent);
+    }
+    50% {
+      box-shadow: 0 0 14px var(--accent);
+    }
+  }
+
+  .feat-highlights {
+    list-style: none;
+    margin-bottom: 18px;
+  }
+  .feat-hl {
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 5px;
+  }
+  .feat-hl::before {
+    content: "▸";
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    border-radius: var(--radius-sm);
+  }
+  .status-chip--soon {
+    background: rgba(255, 188, 46, 0.1);
+    border: 1px solid rgba(255, 188, 46, 0.25);
+    color: #febc2e;
+  }
+  .status-chip--live {
+    background: var(--accent-dim);
+    border: 1px solid var(--border-accent);
+    color: var(--accent);
+  }
+  .status-chip--dl {
+    background: var(--blue-dim);
+    border: 1px solid var(--border-blue);
+    color: var(--blue);
+  }
+  .sc-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 700px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .proj-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition:
+      border-color 0.25s,
+      box-shadow 0.25s,
+      transform 0.25s;
+  }
+  .proj-card:hover {
+    border-color: var(--border-accent);
+    box-shadow: 0 8px 32px var(--shadow-accent);
+    transform: translateY(-3px);
+  }
+  .proj-card--rust:hover {
+    border-color: var(--border-blue);
+    box-shadow: 0 8px 32px rgba(77, 159, 255, 0.12);
+  }
+
+  .proj-top-bar {
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--blue), transparent);
+  }
+  .proj-top-bar--rust {
+    background: linear-gradient(90deg, var(--blue), var(--accent), transparent);
+  }
+
+  .proj-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .proj-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 17px;
+  }
+  .proj-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+  .proj-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 12px;
+  }
+  .proj-hl {
+    display: flex;
+    gap: 7px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .proj-hl::before {
+    content: "//";
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .proj-hl--blue::before {
+    color: var(--blue);
+  }
+  .proj-hl--blue {
+    color: var(--blue);
+    opacity: 0.8;
+  }
+  .proj-footer {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  .badge {
+    display: inline-flex;
+    padding: 3px 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-panel);
+    color: var(--text-secondary);
+    transition: all 0.2s;
+  }
+  .badge:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+  }
+  .badge-blue {
+    border-color: var(--border-blue);
+    color: var(--blue);
+    background: var(--blue-dim);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .btn-bk {
+    color: var(--accent);
+  }
+  .btn:hover {
+    border-color: var(--border-accent);
+    background: var(--accent-dim);
+    color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px var(--shadow-accent);
+  }
+  .btn-primary {
+    border-color: var(--border-accent);
+    background: var(--accent-dim);
+    color: var(--accent);
+  }
+  .btn-primary:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+    box-shadow: 0 0 24px var(--accent-glow);
+  }
+  .btn-blue {
+    border-color: var(--border-blue);
+    background: var(--blue-dim);
+    color: var(--blue);
+  }
+  .btn-blue:hover {
+    background: var(--blue);
+    color: var(--bg-primary);
+    box-shadow: 0 0 24px var(--blue-glow);
+  }
+  .btn-sm {
+    padding: 6px 13px;
+    font-size: 11px;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+</style>
